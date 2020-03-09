@@ -1,0 +1,328 @@
+
+@import 'variables';
+
+h3{
+    color: $color-sky--dark;
+    font-size: 2.8rem;
+    padding:10px;
+}
+
+p{
+    font-family: $font-comforta;    
+    padding: 7px 0;
+    font-size: 1.4rem;
+    color: $font-black;
+}
+
+.row{
+    margin:0;
+}
+.container-fluid{
+    padding: 0;
+}
+
+body{
+   background-position: center;
+   background-image: url('../images/landscape.png');
+   background-repeat: no-repeat;
+   background-attachment: fixed;
+   background-size: cover;
+
+}
+//-------------------------header & content------------//
+header{  
+    background: $transparent-sky;
+}
+#header-content{
+    width: 100%;
+    height: 48em;
+    padding: 40px 0 ;
+    margin-bottom: 10em;
+    .title-container{
+        display: flex;
+        justify-content: center;
+        height: 6em;
+        position: relative;
+        text-shadow: $t-shadow;
+        &__title{
+            h1{
+                font-family: $font-montst;
+                font-size: 3em;  
+                color: white;                
+            }
+            h3{
+                color: $color-sky--light;
+                font-style: italic;
+                font-family: $font-abz;
+            }
+        }
+        img{   // LOGO
+            margin: 1rem;
+            height: 110%;
+        }
+    }
+}
+
+//----------------------- Header buttons:  Android iOS and Video -----//
+.download{
+    display: flex;
+    justify-content: center;
+    a{
+        margin:10px;
+        background-color: $color-sky--light;
+        width: 13rem;
+        height: 4rem;
+        padding-top: 17px;
+        color:white;
+        font-size: 1.4em;
+        font-weight: bold;
+        &:hover{
+            opacity: 0.6;
+            text-decoration: none;
+        }
+    }
+    .btn-video{
+        background-color: $color-sky--dark;
+    }
+}
+
+//---------MAIN---//
+main{
+    padding-top: 10em;
+    z-index: 0;
+    position: relative;
+    top: -10em;
+    left: 0;
+    width: 100%;
+    border: 0;
+    background: $transparent-white;
+    overflow: hidden;
+}
+
+
+
+// --------------------------All Phone images----------//
+.i-phone{    //black phone 
+    position: relative;
+    display: inline-block;
+    z-index:1;
+    &__app{//black phone bg
+        width: 89%;
+        position: absolute;
+        top: 43px;
+        left: 18px;        
+    }  
+}
+.i-phone-white{ //white phone
+    position: absolute;
+    display: inline-block;
+    right: 0.5em;
+    z-index: -1;
+    &__app{//white phone bg
+        width: 89%;
+        position: absolute;
+        top: 60px;
+        left: 15px;          
+    }
+}
+.i-phone-white__left{
+    left: 0.5em;
+    right: unset; 
+}
+
+
+
+
+.features{
+    padding: 2em;
+
+    img{
+        max-width: 100%;
+    }
+}
+
+
+.icons-list{
+    >div{
+        @include box-shadow-light;
+        display: flex;
+        margin: 20px 0;
+        padding: 7px;    
+        background: rgba(255,255,255,0.3);
+        &:hover{
+            background: rgba(255,255,255,0.5);
+        }
+        span{   
+            max-width: 75%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        >div{
+            margin-right: 18px;
+            width: 100px;
+            height: 100px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            img{
+                max-height: 100%;
+                max-width: 100%;
+            }
+        }
+    }
+    .icon-head{
+        text-align: center;
+        background: rgba(255,255,255,0.5);
+        display: block;
+    }
+}
+
+
+.video-container{
+    width: 100%;
+    text-align: center;
+    padding: 5em;
+    position: relative;
+    background-color: $transparent-sky;
+    border-top: 0.4rem solid white;
+    border-bottom: 0.4rem solid white;
+    h3{
+        color: white;
+        text-shadow: $t-shadow;
+    }
+    .video{ 
+        position: relative;
+        height: 500px;
+        iframe{
+            position: relative;
+            top: 0;
+            left: 0;
+            max-width: 900px;
+            width: 100%;
+            height: 100%;
+            border: 0.2rem solid #7af1f5;
+            @include box-shadow-mx;
+        }
+    }
+}
+.download_bottom-btn{      //------------------bottom downloads btns images   --- // 
+    display: inline-block;
+    border-radius: 9%;
+    img{
+        max-width: 100%;
+    }
+    &:hover{
+        background-color: $transparent-white;
+    }
+}
+
+
+footer{
+    background-color: $color-sky;
+    position: relative;
+    .info{
+        font-style: italic;
+    }
+}
+
+hr{
+    background-color: $color-sky--light;
+    opacity:0.6;
+    margin: 5em 0;
+}
+
+
+
+
+@media screen and (max-width: 991px) {
+    .row-reverse{
+        display: flex;
+        flex-direction: column-reverse;
+    }
+    
+    .video-container{
+        padding: 1rem;
+    }
+}
+
+
+@media screen and (max-width: 700px) { //i-pad
+    .title-container{
+        flex-direction: column;
+        img{   //Logo
+            margin-top: 2rem;
+        }
+        h1{  
+            margin-top: 3rem;
+            font-size: 2rem!important;
+        }
+        h3{
+             font-size: 1.8rem!important;
+        }     
+    } 
+    .download{
+        padding-top: 3rem;
+    }
+    .i-phone-white, .i-phone-white__left{
+        display: none;
+    }
+    .video{ 
+        height: 300px!important;
+    }
+    
+
+}
+
+
+@media screen and (max-width: 375px) { //large phone
+    .row-column{
+        display: flex;
+        flex-direction: column;
+    } 
+    .icons-list{
+        >div{
+            flex-direction: column;
+            justify-content: center;
+        
+            span{
+                text-align: center;
+                max-width: 100%!important;
+                }
+            >div{
+                margin:0 auto;
+            }
+        }
+    }
+    .video-container{
+        padding: 1rem 5px;
+        .video{ 
+            height: 250px!important;
+        }
+    }
+    
+
+}
+
+@media screen and (max-width: 345px) {   //small phone
+
+.i-phone{    //black phone 
+    position: relative;
+    display: inline-block;
+    z-index:1;
+    img{
+        width: 89%;
+      }
+    &__app{//black phone bg
+        width: 80%!important;
+        position: absolute;
+        top: 30px;
+        left: 27px;        
+        }
+    }
+
+    .big-phone-app{
+        top: 34px;
+        left: 31px ;
+        }      
+}   

@@ -1,0 +1,32 @@
+$transparent-sky : rgba(31,155,201,0.74);
+$transparent-white: rgba(255,255,255,0.83);
+$font-black: #424242;
+$color-sky: #1F9BC9;
+$color-sky--light:#19B9F4;
+$color-sky--dark:#1C8BB5;
+
+$font-comforta: 'Comfortaa', cursive;
+$font-montst: 'Montserrat', sans-serif;
+$font-abz: 'ABeeZee', sans-serif;
+
+$t-shadow: 2px 2px 6px #181818;
+
+.font-comforta{
+    font-family: $font-comforta;
+}
+
+@mixin box-shadow-mx{
+    -webkit-box-shadow: 10px 10px 38px -6px rgba(0,0,0,0.75);
+    -moz-box-shadow: 10px 10px 38px -6px rgba(0,0,0,0.75);
+    box-shadow: 10px 10px 38px -6px rgba(0,0,0,0.75);
+}
+
+@mixin box-shadow-light{
+    -webkit-box-shadow: 0px 0px 5px 0px rgba(212,231,236,1);
+    -moz-box-shadow: 0px 0px 5px 0px rgba(212,231,236,1);
+    box-shadow: 0px 0px 5px 0px rgba(212,231,236,1);
+}
+
+.box-shadow{
+    @include box-shadow-mx;
+}
